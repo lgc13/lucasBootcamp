@@ -43,5 +43,3 @@ numbers.forEach(number => {
 
 })
 console.log(`smallestNumber: ${smallestNumber}`)
-const input = readline()
-console.log("input: ", input)

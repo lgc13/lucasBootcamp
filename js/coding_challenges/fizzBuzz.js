@@ -23,6 +23,15 @@ Fizz
 ...
 (15) FizzBuzz
 */
+
+
+
+
+
+
+
+
+// This is (an acceptable) answer
 const fizzBuzzNumbers = Array(100).fill(0).map((e, i) => i + 1)
 console.log("fizzBuzzNumbers: ", fizzBuzzNumbers)
 

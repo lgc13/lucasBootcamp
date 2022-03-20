@@ -11,6 +11,9 @@ Smallest number: -2
 
 */
 
+
+
+// Acceptable answers:
 const numbers = [1, -100, 2, 0, 100, 7, 150, -40, -900000]
 
 // find largest number

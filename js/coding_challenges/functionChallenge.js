@@ -7,7 +7,28 @@
 
 Inputs:         2 numbers
 Output:         1 number
+*/
 
+// This is an acceptable answer for part of #1
+function addNumbers(number1, number2) {
+  console.log("variables I recevied are number1: ", number1, " and number2: ", number2)
+
+  const total = number1 + number2
+  return total
+}
+
+const firstAddition = addNumbers(1, 2)
+console.log("firstAddition: ", firstAddition)
+
+const secondAddition = addNumbers(-1, -100)
+console.log("secondAddition: ", secondAddition)
+
+const thirdAddition = addNumbers(-3, 7)
+console.log("thirdAddition: ", thirdAddition)
+
+
+
+/*
 2. Check if number is even/odd
 
 Input:   1 number
@@ -41,22 +62,6 @@ calling with functions with 30 prints out F
 calling with functions with 75 prints out C
 calling with functions with 99 prints out A
 */
-
-function addNumbers(number1, number2) {
-    console.log("variables I recevied are number1: ", number1, " and number2: ", number2)
-
-    const total = number1 + number2
-    return total
-}
-
-const firstAddition = addNumbers(1, 2)
-console.log("firstAddition: ", firstAddition)
-
-const secondAddition = addNumbers(-1, -100)
-console.log("secondAddition: ", secondAddition)
-
-const thirdAddition = addNumbers(-3, 7)
-console.log("thirdAddition: ", thirdAddition)
 
 /*
 6. Given an array of numbers, give me the sum of all of them together

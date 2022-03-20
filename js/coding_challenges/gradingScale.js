@@ -23,6 +23,8 @@ expected output:
    
 */
 
+
+// This is an acceptable answer
 const numbers = []
 for (let number = 0; number <= 100; number++) {
     numbers.push(number)

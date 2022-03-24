@@ -81,3 +81,51 @@ console.log("numbers after FINAL push: ", numbers)
 numbers.forEach(element => {
     console.log("element: ", element)
 })
+
+console.log("------------------ arrays and objects --------------------")
+// You can nest objects withint objects
+const user = {
+    name: "lucas1",
+    description: {
+        height: "6'1",
+        ethinicity: "Brazilian",
+        // ...
+        skin: {
+            type: "oily",
+            color: "tan",
+            // ..
+        }
+    },
+    email: "lucas1@hi.com"
+}
+
+const user2 = {
+    name: "Lucas2",
+    age: 28,
+    email: "lucas2@gmail.com"
+}
+const user3 = {
+    name: "victoria",
+    age: 26,
+    email: "vikki@Hi.com"
+}
+const user4 = {
+    name: "EMre",
+    age: 26,
+    email: "emre@hi.com"
+}
+
+const users = [user, user2, user3, user4]
+console.log("users: ", users)
+
+const userEmails = []
+
+users.forEach(theUserImIteratingOn => {
+    console.log("... theUserImIteratingOn: ", theUserImIteratingOn)
+    const userEmail = theUserImIteratingOn.email
+    console.log("userEmail: ", userEmail)
+
+    userEmails.push(userEmail)
+})
+
+console.log(">> userEmails: ", userEmails)

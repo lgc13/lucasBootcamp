@@ -70,3 +70,63 @@ const pet4 = {
     name: "Bob" // you can only overwrite fields that ALREADY existed
 }
 console.log("pet4: ", pet4)
+
+console.log("------------ getters and setters--------")
+
+// getters
+const user1 = {
+    firstName: "Lucas",
+    lastName: "Costa",
+    age: 28,
+    email: "lucas@hi.com",
+    password: "123password"
+}
+const user2 = {
+    firstName: "Victoria",
+    lastName: "P",
+    age: 26,
+    email: "vicotria@hi.com",
+    password: "123password"
+}
+const user3 = {
+    firstName: "Emre",
+    lastName: "SomeName",
+    age: 26,
+    email: "emre@hi.com",
+    password: "123password"
+}
+
+const getUserFirstName = (user) => {
+    return user.firstName
+}
+
+const lucasFirstName = getUserFirstName(user1)
+const lucasFirstName2 = user1.firstName
+
+const victoriaFirstName = getUserFirstName(user2)
+const emreFirstName = getUserFirstName(user3)
+
+console.log("lucasFirstName: ", lucasFirstName)
+console.log("victoriaFirstName: ", victoriaFirstName)
+console.log("emreFirstName: ", emreFirstName)
+
+const getUserFullName = (user) => {
+    // return user.firstName + " " + user.lastName // string concatenation
+    return `${user.firstName} ${user.lastName}` // string literal
+}
+const myFullName = getUserFullName(user1)
+console.log("myFullName: ", myFullName)
+
+// setters
+
+const setUserFirstName = (user, newName) => {
+    user.firstName = newName
+    return user
+}
+const newUser1 = setUserFirstName(user1, "Luke")
+const newUser2 = setUserFirstName(user2, "Vikki")
+const newUser3 = setUserFirstName(user3, "Em Em")
+
+console.log("newUser1: ", newUser1)
+console.log("newUser2: ", newUser2)
+console.log("newUser3: ", newUser3)

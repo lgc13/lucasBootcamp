@@ -10,7 +10,7 @@ Core concepts:
     - .reduce
     - .filter // great if you want an array as a result, that match the criteria given
     - .push (add elements to a list)
-    - .map
+    - .map // start with an array, and you need to return the same size array
     - .find ???
     - .sort ??
 

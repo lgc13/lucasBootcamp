@@ -11,7 +11,7 @@ Core concepts:
     - .filter // great if you want an array as a result, that match the criteria given
     - .push (add elements to a list)
     - .map // start with an array, and you need to return the same size array
-    - .find ???
+    - .find - when you need a single object back from the array, where the criteria matches
     - .sort ??
 
     - _.max/ _.min (lodash largest/smallest) ***** technically not an array method
@@ -96,23 +96,27 @@ const user = {
             // ..
         }
     },
-    email: "lucas1@hi.com"
+    email: "lucas1@hi.com",
+    luckyNumber: 8
 }
 
 const user2 = {
     name: "Lucas2",
     age: 28,
-    email: "lucas2@gmail.com"
+    email: "lucas2@gmail.com",
+    luckyNumber: 7
 }
 const user3 = {
     name: "victoria",
     age: 26,
-    email: "vikki@Hi.com"
+    email: "vikki@Hi.com",
+    luckyNumber: 7
 }
 const user4 = {
     name: "EMre",
     age: 26,
-    email: "emre@hi.com"
+    email: "emre@hi.com",
+    luckyNumber: 7
 }
 
 const users = [user, user2, user3, user4]
@@ -146,3 +150,12 @@ console.log("usersUnder21: ", usersUnder21)
 const getUsersUnder21WithFilter2 = (listOfUsers) => listOfUsers.filter(user => user.age < 21)
 const usersUnder21Two =  getUsersUnder21WithFilter2(users)
 console.log("usersUnder21Two: ", usersUnder21Two)
+
+console.log("----- FIND METHOD -----")
+const luckyGuy = users.find(user => user.luckyNumber === 7)
+console.log("luckyGuy: ", luckyGuy)
+
+const luckyGuy2 = users.find(user => {
+    return user.luckyNumber === 7
+})
+console.log("luckyGuy2: ", luckyGuy2)

@@ -25,11 +25,11 @@
 */
 
 // example:
-const user1 = {
-    name: "lucas",
-    age: 28
-    // add required fields like age, salary, favoriteColor, luckyNumber
-}
+// const user1 = {
+//     name: "lucas",
+//     age: 28
+//     // add required fields like age, salary, favoriteColor, luckyNumber
+// }
 // add 4 more users
 
 // create 6 functions as mentioned above

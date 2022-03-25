@@ -8,7 +8,7 @@ Core concepts:
 * array methods/functions:
     - .forEach (iterating through lists)
     - .reduce
-    - .filter
+    - .filter // great if you want an array as a result, that match the criteria given
     - .push (add elements to a list)
     - .map
     - .find ???
@@ -129,3 +129,20 @@ users.forEach(theUserImIteratingOn => {
 })
 
 console.log(">> userEmails: ", userEmails)
+
+console.log("----------- FILTER ------------")
+
+const getUsersUnder21WithFilter = (listOfUsers) => {
+    const filteredList = listOfUsers.filter(user => {
+        if (user.age < 21) {
+            return user
+        }
+    })
+    return filteredList
+}
+const usersUnder21 = getUsersUnder21WithFilter(users)
+console.log("usersUnder21: ", usersUnder21)
+
+const getUsersUnder21WithFilter2 = (listOfUsers) => listOfUsers.filter(user => user.age < 21)
+const usersUnder21Two =  getUsersUnder21WithFilter2(users)
+console.log("usersUnder21Two: ", usersUnder21Two)

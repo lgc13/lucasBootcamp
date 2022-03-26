@@ -6,11 +6,11 @@ A user of this app is able to mark items completed, uncompleted, add new items t
 
 Here are some pictures of the finished product:
 
-![Main](Main.PNG)
+![Main](README_assets/Main.PNG)
 
-![Save Items](SaveItems.PNG)
+![Save Items](README_assets/SaveItems.PNG)
 
-![Hide completed](HideCompleted.PNG)
+![Hide completed](README_assets/HideCompleted.PNG)
 
 The idea of working on this app came from one of my coworkers at QDivision. He started a training program for first time developers, which I volunteered to help with. Here are the instructions given by his repo:
 

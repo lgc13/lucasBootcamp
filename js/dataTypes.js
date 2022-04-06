@@ -22,6 +22,7 @@ Data types:
 - List(array)
 - Function
 - Objects
+- Class
 
 Operators:
 +, -, *, /, <, >, <=, >=, ===

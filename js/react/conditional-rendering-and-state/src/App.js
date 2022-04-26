@@ -21,8 +21,8 @@ const App = () => {
   const [myName, setMyName] = useState("Lucas") // Hook
   const [myPeople, setMyPeople] = useState(people)
 
-  const handleButtonClick = () => {
-    console.log(" I WAS CLICKED!!!!")
+  const handleButtonClick = (event) => {
+    console.log(" I WAS CLICKED!!!!, event: ", event)
     // myName = "Another name"
     if (myName === "Lucas") {
       setMyName("Another name")
@@ -53,12 +53,7 @@ const App = () => {
         </div>
       )} */}
       <p>My name is: {myName}</p>
-      <p>My people are: {myPeople.map(person => (
-        <div>Person's name: {person.name} </div>
-      ))}</p>
-
-      <p>Here's daniel....{myPeople.find(person => person.name === "Daniel").name}</p>
-      <button onClick={handleButtonClick}>Click me!</button>
+      <button onChange={handleButtonClick} >Click me</button>
     </div>
   )
 

@@ -37,11 +37,11 @@ class Party {
         System.out.println("guest1 age: " + guest1.getAge());
         guest1.eat("hamburger");
 
-        System.out.println("----- DEFAULT CONSTRUCTOR (again) ----");
+        System.out.println("----- ALL ARGS CONSTRUCTOR ----");
         Guest guest2 = new Guest("Sasha", "Larson", null, null);
         guest2.eat("Acai");
 
-        System.out.println("----- ALL ARGS CONSTRUCTOR ----");
+        System.out.println("----- ALL ARGS CONSTRUCTOR (again) ----");
         Guest guest3 = new Guest("Victoria", "Portela", 26, "Purple");
 
         System.out.println("guest3: " + guest3);

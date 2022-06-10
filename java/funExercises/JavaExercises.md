@@ -2,6 +2,7 @@
 - Each exercise should be done on its own folder/class
 - Feel free to add as many classes as you want per exercise
 - All code/work should be done in at least 1 additional private method, called from the main function
+- sysout the description of each exercise
 
 ### Basic string exercises
 

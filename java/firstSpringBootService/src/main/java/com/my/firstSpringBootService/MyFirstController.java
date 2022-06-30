@@ -37,8 +37,18 @@ public class MyFirstController {
         // string
         // Integer
         // boolean
-        // Object (Car)
-    // figure out how to pass VARIABLES in the API URL (ex: /hello/{this should be a variable somehow}
-    // figure out how to PASS data to the API (use this only with POST requests)
+        // Object (Car) (GET request)
+        // List Object (List of Cars) - GET request
+    // figure out how to pass VARIABLES in the API URL (ex: /hello/{this should be a variable somehow} ) @PathVariable
+        // returning the string/number that you passed in
+        // ex: /hello/123
+            // expect the return to be 123
+        // /hello/my-name-is-lucas
+            // expect the return to be my-name-is-lucas
+    // figure out how to PASS data to the API through the BODY (use this only with POST requests) @RequestBody
+        // ex: POST /hello
+            // body: "hello there"
+            // return "hello there"
+        // try the same as above with other data types (integer, object, list)
 
 }

@@ -21,7 +21,7 @@ public class FirstSpringBootServiceApplication {
 		String myCarMake = myCar.getMake();
 		System.out.println("myCarMake: " + myCarMake);
 
-		myCar.setColor("Hot Red");
+		myCar.setColor("Spicy Red");
 		System.out.println("myCar color: " + myCar.getColor());
 
 	}

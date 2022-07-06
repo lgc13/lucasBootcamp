@@ -7,6 +7,7 @@ import lombok.*;
 @Data
 public class Car {
 
+    private Integer id;
     private String model;
     private String make;
     private Integer year;

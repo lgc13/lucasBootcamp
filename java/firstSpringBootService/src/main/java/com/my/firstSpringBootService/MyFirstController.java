@@ -1,11 +1,20 @@
 package com.my.firstSpringBootService;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class MyFirstController {
+
+    private final Car car1 = new Car(1, "Elantra", "Hyundai", 2013, "Black", 4);
+    private final Car car2 = new Car(2, "Prius C", "Toyota", 2016, "Blue", 4);
+    ArrayList<Car> cars = new ArrayList<>(Arrays.asList(car1, car2));
 
     // endpoint/API
     @GetMapping("/")
@@ -26,9 +35,48 @@ public class MyFirstController {
     }
 
     @PostMapping("/cookie")
+    @ResponseStatus(HttpStatus.CREATED)
     public void createCookie() {
         System.out.println("I want a cookie!");
     }
+
+    @GetMapping("/cars")
+    public List<Car> getCars() {
+        System.out.println("Getting the following cars: " + cars);
+        return cars;
+    }
+
+    @PostMapping("/cars")
+    public Car createCar(@RequestBody CarRequestBody carRequestBody) {
+        System.out.println("Creating a car with requestBody: " + carRequestBody);
+        Integer id = cars.get(cars.size() - 1).getId() + 1;
+
+        Car car = new Car(
+                id,
+                carRequestBody.getCarModel(),
+                carRequestBody.getCarMake(),
+                carRequestBody.getCarYear(),
+                carRequestBody.getCarColor(),
+                4
+        );
+        cars.add(car);
+
+        return car;
+    }
+
+    @GetMapping("/cars/{id}")
+    public Car getCarById(@PathVariable Integer id) {
+        System.out.println("Getting car by id: " + id);
+
+        Optional<Car> carById = cars.stream().filter(car -> car.getId().equals(id)).findFirst();
+
+        return carById.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+//        if (carById.isPresent()) {
+//            return carById.get();
+//        }
+//        throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+    }
+
 
     // Install Postman
     // Create 10 GET APIs

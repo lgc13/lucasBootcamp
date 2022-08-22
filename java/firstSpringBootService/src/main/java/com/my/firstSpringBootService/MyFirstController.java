@@ -83,6 +83,7 @@ public class MyFirstController {
     public void createCustomer() {
         // this is where I do a lot of work to create a customer
         log.info("hurray this is working");
+        log.info("hurray this is working2");
     }
 
 

@@ -1,5 +1,6 @@
 package com.my.firstSpringBootService;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@Slf4j
 public class MyFirstController {
 
     private final Car car1 = new Car(1, "Elantra", "Hyundai", 2013, "Black", 4);
@@ -75,6 +77,12 @@ public class MyFirstController {
 //            return carById.get();
 //        }
 //        throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+    }
+
+    @PostMapping("/customers")
+    public void createCustomer() {
+        // this is where I do a lot of work to create a customer
+        log.info("hurray this is working");
     }
 
 

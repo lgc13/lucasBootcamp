@@ -84,6 +84,7 @@ public class MyFirstController {
         // this is where I do a lot of work to create a customer
         log.info("hurray this is working");
         log.info("hurray this is working2");
+        log.info("hurray this is working3");
     }
 
 

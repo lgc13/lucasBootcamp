@@ -9,8 +9,8 @@ public class OrderService {
 
     private final OrderRepository orderRepository;
 
-    public void createOrder() {
-        orderRepository.createOrder();
+    public void createOrder(OrderRequestBody orderRequestBody) {
+        orderRepository.createOrder(orderRequestBody);
     }
 
 }

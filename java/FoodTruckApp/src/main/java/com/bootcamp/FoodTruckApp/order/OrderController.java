@@ -16,7 +16,7 @@ public class OrderController {
     @PostMapping("/orders")
     public void createOrder(@RequestBody OrderRequestBody orderRequestBody) {
         log.info("Creating an order with requestBody: " + orderRequestBody);
-        orderService.createOrder();
+        orderService.createOrder(orderRequestBody);
     }
 
 }

@@ -1,4 +1,4 @@
-package com.bootcamp.FoodTruckApp.order;
+package com.bootcamp.FoodTruckApp.appetizer;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Order { // entity
+public class Appetizer {
     private Integer id;
-    private Integer customerId;
+    private String name;
+    private Integer price;
 }

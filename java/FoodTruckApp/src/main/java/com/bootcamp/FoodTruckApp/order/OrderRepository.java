@@ -13,7 +13,7 @@ public class OrderRepository {
 
     private final JdbcTemplate jdbcTemplate;
 
-    public void createOrder(OrderRequestBody orderRequestBody) {
+    public Order createOrder(OrderRequestBody orderRequestBody) {
         String sql = "INSERT INTO \"order\" (customer_id) VALUES (?) RETURNING *";
         Order newOrder = jdbcTemplate.queryForObject(
                 sql,
@@ -21,6 +21,8 @@ public class OrderRepository {
                 orderRequestBody.getCustomerId()
         );
         log.info("Successfully created order: " + newOrder);
+
+        return newOrder;
     }
 
 }

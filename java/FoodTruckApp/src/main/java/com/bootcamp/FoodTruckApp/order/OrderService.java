@@ -26,10 +26,13 @@ public class OrderService {
             return appetizerRepository.findById(appetizerId);
         }).collect(Collectors.toList());
 
-        List<Entree> entrees = orderRequestBody.getEntreeIds().stream().map(entreeId -> {
-            entreeRepository.createEntreeOrdered(entreeId, newOrder.getId());
-            return entreeRepository.findById(entreeId);
-        }).collect(Collectors.toList());
+//        List<Entree> entrees = orderRequestBody.getEntreeIds().stream().map(entreeId -> {
+//            entreeRepository.createEntreeOrdered(entreeId, newOrder.getId());
+//            return entreeRepository.findById(entreeId);
+//        }).collect(Collectors.toList());
+        // create a receipt with ALL entrees ordered
+        entreeRepository.createEntreeOrders(newOrder.getId(), orderRequestBody.getEntreeIds());
+        List<Entree> entrees = entreeRepository.findAllByIds(orderRequestBody.getEntreeIds());
 
         return new OrderDto(
                 newOrder.getId(),

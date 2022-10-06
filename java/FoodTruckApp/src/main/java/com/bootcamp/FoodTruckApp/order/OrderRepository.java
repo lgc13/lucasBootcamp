@@ -30,8 +30,6 @@ public class OrderRepository {
     public List<Order> findAllOrders() {
         String sql = "SELECT * FROM \"order\"";
 
-        List<Order> orders = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Order.class));
-        System.out.println("orders: " + orders);
-        return orders;
+        return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Order.class));
     }
 }

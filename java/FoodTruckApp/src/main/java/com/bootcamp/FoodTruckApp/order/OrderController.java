@@ -23,7 +23,7 @@ public class OrderController {
     }
 
     @GetMapping("/orders")
-    public List<Order> findAllOrders() {
+    public List<OrderDto> findAllOrders() {
         log.info("Finding all orders");
         return orderService.findAllOrder();
     }

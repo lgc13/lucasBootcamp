@@ -6,6 +6,8 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 @RequiredArgsConstructor
 @Slf4j
@@ -27,5 +29,15 @@ public class AppetizerRepository {
         return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Appetizer.class), appetizerId);
     }
 
+    public List<Appetizer> findAll() {
+        String sql = "SELECT * FROM appetizer";
 
+        return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Appetizer.class));
+    }
+
+    public List<AppetizerOrdered> findAllAppetizerOrders() {
+        String sql = "SELECT * FROM appetizer_ordered";
+
+        return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(AppetizerOrdered.class));
+    }
 }

@@ -59,6 +59,10 @@ public class EntreeRepository {
     }
 
     public List<Entree> findAllByIds(List<Integer> entreeIds) {
+        if (entreeIds.isEmpty()) {
+            return List.of();
+        }
+
         log.info("Finding ALL entrees by ids: " + entreeIds);
         String sql = "SELECT * FROM entree WHERE id in (:ids)";
 

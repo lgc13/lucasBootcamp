@@ -4,6 +4,7 @@ import com.bootcamp.FoodTruckApp.appetizer.Appetizer;
 import com.bootcamp.FoodTruckApp.appetizer.AppetizerOrdered;
 import com.bootcamp.FoodTruckApp.appetizer.AppetizerRepository;
 import com.bootcamp.FoodTruckApp.entree.Entree;
+import com.bootcamp.FoodTruckApp.entree.EntreeAndOrderId;
 import com.bootcamp.FoodTruckApp.entree.EntreeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -46,8 +47,12 @@ public class OrderService {
 
     public List<OrderDto> findAllOrder() {
         List<Order> orders = orderRepository.findAllOrders();
+
         List<AppetizerOrdered> appetizerOrders = appetizerRepository.findAllAppetizerOrders();
         List<Appetizer> allAppetizers = appetizerRepository.findAll();
+
+        List<Integer> orderIds = orders.stream().map(order -> order.getId()).toList();
+        List<EntreeAndOrderId> entreeAndOrderIds = entreeRepository.findAllByOrderIds(orderIds);
 
         List<OrderDto> orderDtos = orders.stream().map(order -> {
 
@@ -62,14 +67,23 @@ public class OrderService {
                 return appetizerForThisOrder.get();
             }).toList();
 
+            List<EntreeAndOrderId> entreeAndOrderIdsForTHISOrder = entreeAndOrderIds.stream()
+                    .filter(entreeAndOrderId -> entreeAndOrderId.getOrderId() == order.getId())
+                    .toList();
+
+            List<Entree> entrees = entreeAndOrderIdsForTHISOrder.stream().map(entreeAndOrderId -> new Entree(
+                    entreeAndOrderId.getId(),
+                    entreeAndOrderId.getName(),
+                    entreeAndOrderId.getPrice()
+            )).toList();
+
             return new OrderDto(
                     order.getId(),
                     order.getCustomerId(),
                     appetizers,
-                    null
+                    entrees
             );
         }).toList();
-
 
         return orderDtos;
     }

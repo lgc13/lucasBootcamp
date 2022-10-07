@@ -8,6 +8,7 @@ import com.bootcamp.FoodTruckApp.entree.EntreeAndOrderId;
 import com.bootcamp.FoodTruckApp.entree.EntreeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,6 +22,7 @@ public class OrderService {
     private final AppetizerRepository appetizerRepository;
     private final EntreeRepository entreeRepository;
 
+    @Transactional(rollbackFor = Exception.class)
     public OrderDto createOrder(OrderRequestBody orderRequestBody) {
         Order newOrder = orderRepository.createOrder(orderRequestBody);
 
@@ -88,6 +90,7 @@ public class OrderService {
         return orderDtos;
     }
 
+    @Transactional(rollbackFor = Exception.class)
     public void deleteOrderById(Integer orderId) {
         appetizerRepository.deleteAllByOrderId(orderId);
         entreeRepository.deleteAllByOrderId(orderId);

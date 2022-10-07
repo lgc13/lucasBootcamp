@@ -40,4 +40,10 @@ public class AppetizerRepository {
 
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(AppetizerOrdered.class));
     }
+
+    public void deleteAllByOrderId(Integer orderId) {
+        String sql = "DELETE FROM appetizer_ordered WHERE order_id = ?";
+
+        jdbcTemplate.update(sql, orderId);
+    }
 }

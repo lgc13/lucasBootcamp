@@ -32,4 +32,10 @@ public class OrderRepository {
 
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Order.class));
     }
+
+    public void deleteById(Integer orderId) {
+        String sql = "DELETE FROM \"order\" WHERE id = ?";
+
+        jdbcTemplate.update(sql, orderId);
+    }
 }

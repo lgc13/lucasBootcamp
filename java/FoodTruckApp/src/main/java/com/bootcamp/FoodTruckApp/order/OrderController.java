@@ -2,10 +2,7 @@ package com.bootcamp.FoodTruckApp.order;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,6 +23,11 @@ public class OrderController {
     public List<OrderDto> findAllOrders() {
         log.info("Finding all orders");
         return orderService.findAllOrder();
+    }
+
+    @DeleteMapping("/orders/{id}")
+    public void deleteOrderById(@PathVariable Integer id) {
+        orderService.deleteOrderById(id);
     }
 
 }

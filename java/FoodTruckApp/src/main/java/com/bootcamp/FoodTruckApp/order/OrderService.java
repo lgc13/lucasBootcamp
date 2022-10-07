@@ -87,4 +87,10 @@ public class OrderService {
 
         return orderDtos;
     }
+
+    public void deleteOrderById(Integer orderId) {
+        appetizerRepository.deleteAllByOrderId(orderId);
+        entreeRepository.deleteAllByOrderId(orderId);
+        orderRepository.deleteById(orderId);
+    }
 }

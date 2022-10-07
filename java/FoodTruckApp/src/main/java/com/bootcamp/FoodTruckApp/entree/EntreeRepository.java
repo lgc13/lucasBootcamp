@@ -93,4 +93,10 @@ public class EntreeRepository {
         log.info("Found all of the following entrees with order ids: " + entreeAndOrderIds);
         return entreeAndOrderIds;
     }
+
+    public void deleteAllByOrderId(Integer orderId) {
+        String sql = "DELETE FROM entree_ordered WHERE order_id = ?";
+
+        jdbcTemplate.update(sql, orderId);
+    }
 }
